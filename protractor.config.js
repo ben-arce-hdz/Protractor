@@ -5,13 +5,13 @@ exports.config = {
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
-      args: ["--incognito"],
+      args: ["--incognito", "--start-maximized"],
     },
   },
 
   framework: "jasmine",
 
-  specs: ["./tests/contact_spec.js"],
+  specs: ["./tests/angular_app_spec.js", "./tests/non_angular_contact_spec.js"],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
