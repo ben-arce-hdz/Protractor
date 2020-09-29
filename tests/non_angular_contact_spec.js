@@ -9,7 +9,6 @@ describe("Epam WebSite", function () {
     browser.ignoreSynchronization = true;
     browser.waitForAngularEnabled(false);
 
-    browser.driver.manage().window().maximize();
     browser.get("https://www.epam.com/");
     browser.manage().timeouts().implicitlyWait(10000);
   });
