@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-29T21:38:08.815Z",
+    "end": "2020-09-29T21:38:24.458Z",
+    "duration": 15643,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db34b0c6-74e9-4113-a767-45f6f34d2a82",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 2,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "b73f9fb8-a618-461e-8ce9-39797c6085d4",
+          "parentUUID": "db34b0c6-74e9-4113-a767-45f6f34d2a82",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9a2c3b5e-388f-4af9-8a0e-e7dcdcb74f72",
+          "title": "Epam WebSite",
+          "fullFile": "C:\\javascript\\protractor\\tests\\non_angular_pom_contact_spec.js",
+          "file": "\\tests\\non_angular_pom_contact_spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill the contact form out",
+              "fullTitle": "Epam WebSite Fill the contact form out",
+              "timedOut": false,
+              "duration": 15631,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.ignoreSynchronization = true;\nbrowser.waitForAngularEnabled(false);\nbrowser.manage().timeouts().implicitlyWait(10000);\nhomePage.getHomePage();\nconst contactPage = homePage.acessContactSection();\ncontactPage.acceptCookies();\ncontactPage.enterUserName(\"Benjamin\");\ncontactPage.enterLastName(\"Arce\");\ncontactPage.enterEmail(\"barce@outlook.com\");\ncontactPage.enterTelephone(\"33-12-34-56-78\");\ncontactPage.enterCompany(\"Epam\");\ncontactPage.selectPosition(\"C-Level\");\ncontactPage.selectCountry(\"United States\");\ncontactPage.selectState(\"Alabama\");\ncontactPage.selectCity(\"Abbeville, AL\");\ncontactPage.checkPersonalInfo();\ncontactPage.selectHowHeardAboutEpam(\"Event\");\ncontactPage.submitForm();\ncontactPage.wait(4000);",
+              "err": {},
+              "uuid": "8afbf060-9f62-47cd-9139-f1464a4549fb",
+              "parentUUID": "9a2c3b5e-388f-4af9-8a0e-e7dcdcb74f72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8afbf060-9f62-47cd-9139-f1464a4549fb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15631,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}

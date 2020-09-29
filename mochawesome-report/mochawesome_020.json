@@ -1,0 +1,140 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-29T21:50:06.582Z",
+    "end": "2020-09-29T21:50:14.836Z",
+    "duration": 8254,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "60dc0d8f-ee31-4ac4-a565-4fdbba2b6efd",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 0,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "c392f450-1dfc-42b6-8f7a-c1ccd6f50f93",
+          "parentUUID": "60dc0d8f-ee31-4ac4-a565-4fdbba2b6efd",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1ac9772d-8688-447f-9f18-3e1233fa99c0",
+          "title": "Epam WebSite",
+          "fullFile": "C:\\javascript\\protractor\\tests\\non_angular_contact_spec.js",
+          "file": "\\tests\\non_angular_contact_spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook: ret in \"Epam WebSite\"",
+              "fullTitle": "Epam WebSite \"before each\" hook: ret in \"Epam WebSite\"",
+              "timedOut": false,
+              "duration": 5815,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.ignoreSynchronization = true;\nbrowser.waitForAngularEnabled(false);\nbrowser.get(\"https://www.epam.com/\");\nbrowser.manage().timeouts().implicitlyWait(10000);",
+              "err": {},
+              "uuid": "b5708e54-73b3-470d-8c5f-bba515da73a6",
+              "parentUUID": "1ac9772d-8688-447f-9f18-3e1233fa99c0",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill the contact form out",
+              "fullTitle": "Epam WebSite Fill the contact form out",
+              "timedOut": false,
+              "duration": 2433,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let dropDown;\nlet elemAction = new ElementActions();\nelemAction.click(browser.$(\".cta-button-ui\"));\nlet cookieBtns = await browser.findElements(\n  by.css(\".cookie-disclaimer__button\")\n);\nif (cookieBtns) cookieBtns[0].click();\nelemAction.click(\n  browser.findElement(\n    by.xpath(\"//span[contains(@title,'General Information Request')]\")\n  )\n);\nelemAction.click(\n  browser.findElement(\n    by.xpath(\"//li[contains(text(),'Talk to Sales in North America')]\")\n  )\n);\nelemAction.sendKeys(\n  browser.findElement(by.name(\"user_first_name\")),\n  \"Benjamin\"\n);\nelemAction.sendKeys(browser.findElement(by.name(\"user_last_name\")), \"Arce\");\nelemAction.sendKeys(\n  browser.findElement(by.name(\"user_email\")),\n  \"barce@outlook.com\"\n);\nelemAction.sendKeys(\n  browser.$(\"input[name='user_phone']\"),\n  \"33-12-34-56-78\"\n);\nelemAction.sendKeys(browser.$(\"input[name='user_company']\"), \"Epam\");\ndropDown = new DropDownWrapper(\n  $(\n    \"select[name='user_position'] ~ span span[class='select2-selection__arrow']\"\n  )\n);\ndropDown.selectByText(\"C-Level\");\ndropDown = new DropDownWrapper(\n  $(\n    \"select[name='user_country'] ~ span span[class='select2-selection__arrow']\"\n  )\n);\ndropDown.selectByText(\"United States\");\nbrowser.sleep(2000);\ndropDown = new DropDownWrapper(\n  $(\n    \"select[name='user_region'] ~ span span[class='select2-selection__arrow']\"\n  )\n);\nbrowser.$(\"select[name='user_region'] ~span input\").sendKeys(\n  \"Alabama\",\n  Key.ENTER\n);\ndropDown = new DropDownWrapper(\n  $(\n    \"select[name='user_city'] ~ span span[class='select2-selection__arrow']\"\n  )\n);\ndropDown.selectByText(\"Abbeville, AL\");\nelemAction.scrollUntilVisible(browser.$(\"#new_form_gdprConsent + label\"));\nelemAction.click(browser.$(\"#new_form_gdprConsent + label\"));\nelemAction.click(\n  browser.$(\n    \"select[name='user_comment_how_hear_about'] ~ span span.select2-selection__arrow\"\n  )\n);\nelemAction.click(\n  browser.findElement(by.xpath(\"//li[contains(text(),'Event')]\"))\n);\nelemAction.click(browser.$(\".button-ui\"));",
+              "err": {},
+              "uuid": "3bb4fab7-4cd8-4846-b48d-742bacef96b9",
+              "parentUUID": "1ac9772d-8688-447f-9f18-3e1233fa99c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3bb4fab7-4cd8-4846-b48d-742bacef96b9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2433,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}

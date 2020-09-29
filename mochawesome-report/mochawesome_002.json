@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-29T18:56:19.883Z",
+    "end": "2020-09-29T18:56:25.282Z",
+    "duration": 5399,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "44b047aa-78b0-4e57-a8cd-fe2911950835",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 0,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "71d244dd-7366-4fd0-a071-c36cbdaac718",
+          "parentUUID": "44b047aa-78b0-4e57-a8cd-fe2911950835",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21646c17-e8c3-4308-8ea7-427252761565",
+          "title": "Epam WebSite",
+          "fullFile": "C:\\javascript\\protractor\\tests\\non_angular_pom_contact_spec.js",
+          "file": "\\tests\\non_angular_pom_contact_spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test",
+              "fullTitle": "Epam WebSite test",
+              "timedOut": false,
+              "duration": 5390,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.ignoreSynchronization = true;\nbrowser.waitForAngularEnabled(false);\nbrowser.get(\"https://www.epam.com/\");\nbrowser.manage().timeouts().implicitlyWait(10000);",
+              "err": {},
+              "uuid": "096dd599-68b7-48c9-a611-f0798bb46b5c",
+              "parentUUID": "21646c17-e8c3-4308-8ea7-427252761565",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "096dd599-68b7-48c9-a611-f0798bb46b5c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5390,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}

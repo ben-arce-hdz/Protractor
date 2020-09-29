@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-29T21:48:37.630Z",
+    "end": "2020-09-29T21:48:52.328Z",
+    "duration": 14698,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "682a1ea9-7265-4362-ba30-7139a4f0a171",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 0,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "9f2f2dff-ab2b-4877-abc6-40a361dd119d",
+          "parentUUID": "682a1ea9-7265-4362-ba30-7139a4f0a171",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "14e73e86-1b59-4fb7-9e8a-154bd048428a",
+          "title": "Epam WebSite",
+          "fullFile": "C:\\javascript\\protractor\\tests\\non_angular_pom_contact_spec.js",
+          "file": "\\tests\\non_angular_pom_contact_spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill the contact form out",
+              "fullTitle": "Epam WebSite Fill the contact form out",
+              "timedOut": false,
+              "duration": 14691,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.ignoreSynchronization = true;\nbrowser.waitForAngularEnabled(false);\nbrowser.manage().timeouts().implicitlyWait(10000);\nhomePage.getHomePage();\nconst contactPage = homePage.acessContactSection();\ncontactPage.acceptCookies();\ncontactPage.selectInquiryReason(\"Talk to Sales in North America\")\ncontactPage.enterUserName(\"Benjamin\");\ncontactPage.enterLastName(\"Arce\");\ncontactPage.enterEmail(\"barce@outlook.com\");\ncontactPage.enterTelephone(\"33-12-34-56-78\");\ncontactPage.enterCompany(\"Epam\");\ncontactPage.selectPosition(\"C-Level\");\ncontactPage.selectCountry(\"United States\");\ncontactPage.selectState(\"Alabama\");\ncontactPage.selectCity(\"Abbeville, AL\");\ncontactPage.checkPersonalInfo();\ncontactPage.selectHowHeardAboutEpam(\"Event\");\ncontactPage.submitForm();",
+              "err": {},
+              "uuid": "24127f30-29af-413e-9cb8-f57cf1793f91",
+              "parentUUID": "14e73e86-1b59-4fb7-9e8a-154bd048428a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "24127f30-29af-413e-9cb8-f57cf1793f91"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14691,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}

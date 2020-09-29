@@ -1,104 +1,29 @@
-const { element, browser, by, Key } = require("protractor");
-const ElementActions = require("../utils/element_actions.js");
-const DropDownWrapper = require("../utils/dropdown_wrapper.js");
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
-chai.use(chaiAsPromised);
-
-var expect = chai.expect;
+const { browser } = require("protractor");
+const expect = global["chai"].expect;
+const homePage = require("../pages/home_page.js");
 
 describe("Epam WebSite", function () {
-  this.beforeEach(function () {
+  it("POM Fill the contact form out", async function () {
     browser.ignoreSynchronization = true;
     browser.waitForAngularEnabled(false);
 
-    browser.get("https://www.epam.com/");
     browser.manage().timeouts().implicitlyWait(10000);
-  });
+    homePage.getHomePage();
+    const contactPage = homePage.acessContactSection();
 
-  xit("Fill the contact form out", async function () {
-    let dropDown;
-    let elemAction = new ElementActions();
-
-    elemAction.click(browser.$(".cta-button-ui"));
-
-    let cookieBtns = await browser.findElements(
-      by.css(".cookie-disclaimer__button")
-    );
-    if (cookieBtns) cookieBtns[0].click();
-
-    elemAction.click(
-      browser.findElement(
-        by.xpath("//span[contains(@title,'General Information Request')]")
-      )
-    );
-
-    elemAction.click(
-      browser.findElement(
-        by.xpath("//li[contains(text(),'Talk to Sales in North America')]")
-      )
-    );
-
-    elemAction.sendKeys(
-      browser.findElement(by.name("user_first_name")),
-      "Benjamin"
-    );
-    elemAction.sendKeys(browser.findElement(by.name("user_last_name")), "Arce");
-    elemAction.sendKeys(
-      browser.findElement(by.name("user_email")),
-      "barce@outlook.com"
-    );
-    elemAction.sendKeys(
-      browser.$("input[name='user_phone']"),
-      "33-12-34-56-78"
-    );
-    elemAction.sendKeys(browser.$("input[name='user_company']"), "Epam");
-
-    dropDown = new DropDownWrapper(
-      $(
-        "select[name='user_position'] ~ span span[class='select2-selection__arrow']"
-      )
-    );
-    dropDown.selectByText("C-Level");
-
-    dropDown = new DropDownWrapper(
-      $(
-        "select[name='user_country'] ~ span span[class='select2-selection__arrow']"
-      )
-    );
-    dropDown.selectByText("United States");
-
-    browser.sleep(2000);
-    dropDown = new DropDownWrapper(
-      $(
-        "select[name='user_region'] ~ span span[class='select2-selection__arrow']"
-      )
-    );
-    browser.$("select[name='user_region'] ~span input").sendKeys(
-      "Alabama",
-      Key.ENTER
-    );
-
-    dropDown = new DropDownWrapper(
-      $(
-        "select[name='user_city'] ~ span span[class='select2-selection__arrow']"
-      )
-    );
-    dropDown.selectByText("Abbeville, AL");
-
-    elemAction.scrollUntilVisible(browser.$("#new_form_gdprConsent + label"));
-    elemAction.click(browser.$("#new_form_gdprConsent + label"));
-
-    elemAction.click(
-      browser.$(
-        "select[name='user_comment_how_hear_about'] ~ span span.select2-selection__arrow"
-      )
-    );
-
-    elemAction.click(
-      browser.findElement(by.xpath("//li[contains(text(),'Event')]"))
-    );
-
-    elemAction.click(browser.$(".button-ui"));
+    contactPage.acceptCookies();
+    contactPage.selectInquiryReason("Talk to Sales in North America")
+    contactPage.enterUserName("Benjamin");
+    contactPage.enterLastName("Arce");
+    contactPage.enterEmail("barce@outlook.com");
+    contactPage.enterTelephone("33-12-34-56-78");
+    contactPage.enterCompany("Epam");
+    contactPage.selectPosition("C-Level");
+    contactPage.selectCountry("United States");
+    contactPage.selectState("Alabama");
+    contactPage.selectCity("Abbeville, AL");
+    contactPage.checkPersonalInfo();
+    contactPage.selectHowHeardAboutEpam("Event");
+    contactPage.submitForm();
   });
 });

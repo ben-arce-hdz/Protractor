@@ -1,9 +1,6 @@
 exports.config = {
   directConnect: true,
   // seleniumAddress: 'http://localhost:4444/wd/hub',
-
-  baseUrl: 'http://localhost:4200/',
-
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
@@ -26,11 +23,17 @@ exports.config = {
 
   mochaOpts: {
     timeout: 100000,
-      reporter: 'mochawesome',
-     reporterOptions: {
-       overwrite: false // THIS MUST BE SET TO FALSE
-     }
-   }
+    reporter: "mochawesome",
+    reporterOptions: {
+      overwrite: false, // THIS MUST BE SET TO FALSE
+    },
+  },
 
-
+  onPrepare: function () {
+    // making chai available globally. in your test use `const expect = global['chai'].expect;`
+    var chai = require("chai");
+    var chaiAsPromised = require("chai-as-promised");
+    chai.use(chaiAsPromised);
+    global.chai = chai;
+  },
 };

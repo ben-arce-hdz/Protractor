@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-09-29T21:48:37.650Z",
+    "end": "2020-09-29T21:48:56.142Z",
+    "duration": 18492,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0197a040-7af6-42df-b1cd-d912853642f2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 1,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "546c3aa7-949b-4091-9665-07e11bd00ffe",
+          "parentUUID": "0197a040-7af6-42df-b1cd-d912853642f2",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0b85a2f7-2a3f-40fa-80bf-8349f58dfc88",
+          "title": "Angular Application",
+          "fullFile": "C:\\javascript\\protractor\\tests\\angular_app_spec.js",
+          "file": "\\tests\\angular_app_spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook: ret in \"Angular Application\"",
+              "fullTitle": "Angular Application \"before each\" hook: ret in \"Angular Application\"",
+              "timedOut": false,
+              "duration": 7722,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.get(\"https://www.freelancer.com/\");\nbrowser.manage().timeouts().implicitlyWait(20000);",
+              "err": {},
+              "uuid": "5d203599-794a-4a73-a594-11510f2fffe8",
+              "parentUUID": "0b85a2f7-2a3f-40fa-80bf-8349f58dfc88",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "log in with incorrect data",
+              "fullTitle": "Angular Application log in with incorrect data",
+              "timedOut": false,
+              "duration": 10755,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "element(by.xpath(\"//*[@fltrackinglabel='LoginPage']//a\")).click();\n$(\"input[type='email']\").sendKeys(\"hello@outlook.com\")\n$(\"input[type='password']\").sendKeys(\"12345\")\nelement(by.buttonText('Log In')).click()\nlet errorMessage = await $(\".BannerAlertBox-desc[data-type='paragraph']\").getText()\nexpect(errorMessage).toBe(\"Incorrect username or password.\")",
+              "err": {
+                "message": "ReferenceError: expect is not defined",
+                "estack": "ReferenceError: expect is not defined\n    at Context.<anonymous> (tests\\angular_app_spec.js:16:5)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)\nFrom: Task: Angular Application log in with incorrect data\n    at Context.ret (C:\\Users\\benjamin_arce\\AppData\\Roaming\\npm\\node_modules\\protractor\\node_modules\\selenium-webdriver\\testing\\index.js:182:10)",
+                "diff": null
+              },
+              "uuid": "33644804-a1a7-43b0-9f7a-0080060ad517",
+              "parentUUID": "0b85a2f7-2a3f-40fa-80bf-8349f58dfc88",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "33644804-a1a7-43b0-9f7a-0080060ad517"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10755,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}
