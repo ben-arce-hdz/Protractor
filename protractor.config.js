@@ -4,11 +4,14 @@ exports.config = {
 
   capabilities: {
     browserName: "chrome",
+    chromeOptions: {
+      args: ["--incognito"],
+    },
   },
 
   framework: "jasmine",
 
-  specs: ["./tests/specs.js"],
+  specs: ["./tests/contact_spec.js"],
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {

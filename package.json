@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Benjamin Arce",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^7.0.0"
+  }
 }
