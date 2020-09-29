@@ -3,7 +3,7 @@ const { browser, element, by } = require("protractor");
 describe("Angular Application", function () {
   beforeEach(function () {
     browser.get("https://www.freelancer.com/");
-    browser.manage().timeouts().implicitlyWait(9000);
+    browser.manage().timeouts().implicitlyWait(20000);
   });
 
   it("log in with incorrect data", async function () {

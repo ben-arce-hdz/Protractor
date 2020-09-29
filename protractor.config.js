@@ -7,6 +7,8 @@ exports.config = {
     chromeOptions: {
       args: ["--incognito", "--start-maximized"],
     },
+    shardTestFiles: true,
+    maxInstances: 3,
   },
 
   framework: "jasmine",
