@@ -1,7 +1,6 @@
 const { element, browser, by, Key } = require("protractor");
 const WaitUntil = require("../utils/wait_until.js");
 const ElementActions = require("../utils/element_actions.js");
-let elemAction = new ElementActions();
 const DropDownWrapper = require("../utils/dropdown_wrapper.js");
 
 describe("Epam WebSite", function () {
@@ -15,6 +14,7 @@ describe("Epam WebSite", function () {
 
   it("Fill the contact form out", async function () {
     let dropDown;
+    let elemAction = new ElementActions();
     elemAction.click(browser.$(".cta-button-ui"));
 
     let cookieBtns = await browser.findElements(
