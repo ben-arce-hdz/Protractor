@@ -3,7 +3,6 @@ const ContactPage = require("./contact_page.js");
 const BasePage = require("./base_page.js");
 
 class HomePage extends BasePage {
-
   contactButton = $(".cta-button-ui");
 
   constructor() {
@@ -11,16 +10,12 @@ class HomePage extends BasePage {
     this.url = "https://www.epam.com/";
   }
 
-  get contactMenuItem() {
-    return this.contactButton;
-  }
-
   getHomePage() {
     super.navigateTo(this.url);
   }
 
   acessContactSection() {
-    this.contactMenuItem.click();
+    this.contactButton.click();
     return ContactPage;
   }
 }

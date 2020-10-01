@@ -8,7 +8,7 @@ class ContactPage extends BasePage {
    */
   acceptCookiesButton = $(".cookie-disclaimer__button");
   firstNameInput = element(by.name("user_first_name"));
-  userNameInput = element(by.name("user_last_name"));
+  lastNameInput = element(by.name("user_last_name"));
   userEmailInput = element(by.name("user_email"));
   userPhoneInput = $("input[name='user_phone']");
   userCompanyInput = $("input[name='user_company']");
@@ -24,7 +24,7 @@ class ContactPage extends BasePage {
   cityDropDown = $(
     "select[name='user_city'] ~ span span[class='select2-selection__arrow']"
   );
-  personaInfoCheckBox = $("#new_form_gdprConsent + label");
+  personalInfoCheckBox = $("#new_form_gdprConsent + label");
   submitButton = $(".button-ui");
   hearAboutEpamDropDown = $(
     "select[name='user_comment_how_hear_about'] ~ span span.select2-selection__arrow"
@@ -37,105 +37,49 @@ class ContactPage extends BasePage {
     super();
   }
 
-  get acceptCookie() {
-    return this.acceptCookiesButton;
-  }
-  get userName() {
-    return this.firstNameInput;
-  }
-  get lastName() {
-    return this.userNameInput;
-  }
-  get email() {
-    return this.userEmailInput;
-  }
-  get telephone() {
-    return this.userPhoneInput;
-  }
-  get company() {
-    return this.userNameInput;
-  }
-  get position() {
-    return this.positionDropDown;
-  }
-  get country() {
-    return this.countryDropDown;
-  }
-  get state() {
-    return this.stateDropDown;
-  }
-  get city() {
-    return this.cityDropDown;
-  }
-  get personalInfo() {
-    return this.personaInfoCheckBox;
-  }
-  get submit() {
-    return this.submitButton;
-  }
-  get hearAboutEpam() {
-    return this.hearAboutEpamDropDown;
-  }
-  get reasonInquiry() {
-    return this.reasonInquieryDropDown;
-  }
-
   selectInquiryReason(reason) {
-    new DropDownWrapper(this.reasonInquiry).selectByText(reason);
+    new DropDownWrapper(this.reasonInquieryDropDown).selectByText(reason);
   }
-
   selectHowHeardAboutEpam(reason) {
-    new DropDownWrapper(this.hearAboutEpam).selectByText(reason);
+    new DropDownWrapper(this.hearAboutEpamDropDown).selectByText(reason);
   }
-
   submitForm() {
-    this.submit.click();
+    this.submitButton.click();
   }
-
   checkPersonalInfo() {
-    super.scrollUntilVisible(this.personalInfo);
-    this.personalInfo.click();
+    super.scrollUntilVisible(this.personalInfoCheckBox);
+    this.personalInfoCheckBox.click();
   }
-
   selectCity(cityName) {
-    new DropDownWrapper(this.city).selectByText(cityName);
+    new DropDownWrapper(this.cityDropDown).selectByText(cityName);
   }
-
   selectState(stateName) {
     super.wait(2000);
-    new DropDownWrapper(this.state).enterText(stateName);
+    new DropDownWrapper(this.stateDropDown).enterText(stateName);
   }
-
   selectCountry(countryName) {
-    new DropDownWrapper(this.country).selectByText(countryName);
+    new DropDownWrapper(this.countryDropDown).selectByText(countryName);
   }
-
   selectPosition(positionName) {
-    new DropDownWrapper(this.position).selectByText(positionName);
+    new DropDownWrapper(this.positionDropDown).selectByText(positionName);
   }
-
   acceptCookies() {
-    this.acceptCookie.click();
+    this.acceptCookiesButton.click();
   }
-
   enterUserName(userName) {
-    this.userName.sendKeys(userName);
+    this.firstNameInput.sendKeys(userName);
   }
-
   enterLastName(lastName) {
-    this.lastName.sendKeys(lastName);
+    this.lastNameInput.sendKeys(lastName);
   }
-
   enterEmail(email) {
-    this.email.sendKeys(email);
+    this.userEmailInput.sendKeys(email);
   }
-
   enterTelephone(telephoneNum) {
-    this.telephone.sendKeys(telephoneNum);
+    this.userPhoneInput.sendKeys(telephoneNum);
   }
-
   enterCompany(companyName) {
-    this.company.sendKeys(companyName);
+    this.userCompanyInput.sendKeys(companyName);
   }
 }
 module.exports = new ContactPage();

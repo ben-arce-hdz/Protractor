@@ -1,0 +1,121 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-01T18:06:09.115Z",
+    "end": "2020-10-01T18:06:19.768Z",
+    "duration": 10653,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aefaead0-5c3a-49e3-8e59-7506ef12c10e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [
+        {
+          "title": "\"after each\" hook: ret in \"{root}\"",
+          "fullTitle": "\"after each\" hook: ret in \"{root}\"",
+          "timedOut": false,
+          "duration": 1,
+          "state": null,
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "if (hooks.afterEach) { \n  return hooks.afterEach();\n}",
+          "err": {},
+          "uuid": "7f831d0f-c818-44b9-a623-4a07cc1ec52c",
+          "parentUUID": "aefaead0-5c3a-49e3-8e59-7506ef12c10e",
+          "isHook": true,
+          "skipped": false
+        }
+      ],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46442bbb-33ce-4269-b555-1ce5be45bc6b",
+          "title": "Epam WebSite",
+          "fullFile": "C:\\javascript\\protractor\\tests\\non_angular_pom_contact_spec.js",
+          "file": "\\tests\\non_angular_pom_contact_spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POM Fill the contact form out",
+              "fullTitle": "Epam WebSite POM Fill the contact form out",
+              "timedOut": false,
+              "duration": 10636,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser.ignoreSynchronization = true;\nbrowser.waitForAngularEnabled(false);\nbrowser.manage().timeouts().implicitlyWait(10000);\nhomePage.getHomePage();\nconst contactPage = homePage.acessContactSection();\ncontactPage.acceptCookies();\ncontactPage.selectInquiryReason(\"Talk to Sales in North America\");\ncontactPage.enterUserName(\"Benjamin\");\ncontactPage.enterLastName(\"Arce\");\ncontactPage.enterEmail(\"barce@outlook.com\");\ncontactPage.enterTelephone(\"33-12-34-56-78\");\ncontactPage.enterCompany(\"Epam\");\ncontactPage.selectPosition(\"C-Level\");\ncontactPage.selectCountry(\"United States\");\ncontactPage.selectState(\"Alabama\");\ncontactPage.selectCity(\"Abbeville, AL\");\ncontactPage.checkPersonalInfo();\ncontactPage.selectHowHeardAboutEpam(\"Event\");\ncontactPage.submitForm();",
+              "err": {},
+              "uuid": "fb7cca8e-f481-46b1-815b-6efd0cac5db1",
+              "parentUUID": "46442bbb-33ce-4269-b555-1ce5be45bc6b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fb7cca8e-f481-46b1-815b-6efd0cac5db1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10636,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 100000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 100000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}
