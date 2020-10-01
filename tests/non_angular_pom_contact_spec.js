@@ -12,7 +12,7 @@ describe("Epam WebSite", function () {
     const contactPage = homePage.acessContactSection();
 
     contactPage.acceptCookies();
-    contactPage.selectInquiryReason("Talk to Sales in North America")
+    contactPage.selectInquiryReason("Talk to Sales in North America");
     contactPage.enterUserName("Benjamin");
     contactPage.enterLastName("Arce");
     contactPage.enterEmail("barce@outlook.com");
